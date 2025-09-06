@@ -7,7 +7,7 @@
 
 Circle::Circle(const double radius): radius(radius) {}
 
-double Circle::area() {
+double Circle::area() const {
     return std::numbers::pi * radius * radius;
 }
 
@@ -15,6 +15,6 @@ void Circle::scale(double f) {
     radius *= f;
 }
 
-Shape * Circle::clone() {
+Shape * Circle::clone() const {
     return new Circle(*this);
 }

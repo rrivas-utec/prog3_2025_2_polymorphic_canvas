@@ -12,9 +12,11 @@ class Circle final : public Shape {
 public:
     Circle() = default;
     explicit Circle(double radius);
-    double area() override;
+
+    [[nodiscard]] double area() const override;
     void scale(double f) override;
-    Shape* clone() override;
+
+    [[nodiscard]] Shape* clone() const override;
 };
 
 #endif //CIRCLE_H

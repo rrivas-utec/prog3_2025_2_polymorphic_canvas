@@ -13,9 +13,11 @@ class Rectangle final : public Shape {
 public:
     Rectangle() = default;
     explicit Rectangle(double height, double width);
-    double area() override;
+
+    [[nodiscard]] double area() const override;
     void scale(double f) override;
-    Shape* clone() override;
+
+    [[nodiscard]] Shape* clone() const override;
 };
 
 #endif //RECTANGLE_H

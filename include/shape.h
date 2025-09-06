@@ -6,10 +6,11 @@
 #define SHAPE_H
 
 struct Shape {
-    virtual double area() = 0;
+    [[nodiscard]] virtual double area() const = 0;
     virtual void scale(double f) = 0;
     virtual ~Shape() = default;
-    virtual Shape *clone() = 0;
+    [[nodiscard]] virtual Shape *clone() const = 0;   // Si creo un objeto constante este metodo
+                                        // esta disponible
 };
 
 #endif //SHAPE_H
